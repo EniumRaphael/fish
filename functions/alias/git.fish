@@ -1,5 +1,9 @@
-function ga -d "adding files to the repo"
+function ga -d "Adding files to the repo"
 	git add $argv
+end
+
+function gcl -d "Clone the repo"
+	git clone $argv
 end
 
 function gs -d "Show the status of the repo"
