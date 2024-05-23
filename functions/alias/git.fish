@@ -1,5 +1,9 @@
 function ga -d "Adding files to the repo"
-	git add $argv
+	if [ -z $argv ]
+		git add .
+	else
+		git add $argv
+	end
 end
 
 function gcl -d "Clone the repo"
@@ -11,11 +15,19 @@ function gs -d "Show the status of the repo"
 end
 
 function gm -d "Comment the changes to the repo"
-	git commit -m $argv
+	if [ -z $argv ]
+		git commit -m "I'll learn to do commit \!"
+	else
+		git commit -m $argv
+	end
 end
 
 function gc -d "Comment the changes to the repo"
-	git commit -m $argv
+	if [ -z $argv ]
+		git commit -m "I'll learn to do commit \!"
+	else
+		git commit -m $argv
+	end
 end
 
 function gp -d "Push the changes to the repo"
@@ -27,5 +39,9 @@ function gpp -d "Pull the changes from the repo"
 end
 
 function gr -d "Restore the changes from the repo"
-	git restore $argv
+	if [ -z $argv ]
+		git restore .
+	else
+		git restore $argv
+	end
 end

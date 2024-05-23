@@ -1,3 +1,6 @@
+# Removing the welcome prompt
+set -g fish_greeting
+
 if [ -d /opt/homebrew/bin ]
 	set PATH $PATH:/opt/homebrew/bin
 	eval /opt/homebrew/bin/brew shellenv
