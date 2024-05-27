@@ -34,8 +34,8 @@ if [ $USER = "root" ]
 		set secondary_color red
 	else
 		set emoji '🦑 '
-		set main_color red
-		set secondary_color D88C8C
+		set main_color blue
+		set secondary_color brcyan
 	end
 
 	set_color $main_color
