@@ -1,7 +1,7 @@
 function make -d "Compile using the makefile"
 	if test -f /Users/raphael/.local/bin/orb
-		orb make -j $argv
+		orb make $argv
 	else
-		make -j $argv
+		make $argv
 	end
 end
