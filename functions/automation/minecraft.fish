@@ -2,7 +2,7 @@ function mc
 	if test (count $argv) -eq 0
 		echo "Usage: mc [init | start | restart | console | logs | stop]"
 		return
-	else if
+	else
 		switch $argv[1]
 			case init
 				sudo docker run --init -d -v /home/raphael/minecraft_server:/data -e TYPE=PAPER -e MEMORY=6G -e OPS=Zeldraft -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server

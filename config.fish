@@ -1,5 +1,6 @@
 # Removing the welcome prompt
 set -g fish_greeting
+set -x TERM xterm-256color
 
 if [ -d /opt/homebrew/bin ]
 	set PATH $PATH:/opt/homebrew/bin
