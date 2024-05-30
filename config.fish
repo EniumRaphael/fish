@@ -20,18 +20,20 @@ for alias in ~/.config/fish/functions/alias/*
     source $alias
 end
 
-for tools in ~/.config/fish/functions/tools/*
-	source $tools
-end
-
 function fish_prompt
     set -l path (string replace -r "^$HOME" "~" $PWD)
-	set -l user (whoami)
 
-if [ $USER = "root" ]
+	if test (whoami) = "root"
 		set emoji '⛔ '
 		set main_color D88C8C
 		set secondary_color red
+	else if test (hostname) = "enium"
+		set emoji '🌐 '
+		set main_color blue
+		set secondary_color brcyan
+		for tools in ~/.config/fish/functions/automations/*
+			source $tools
+		end
 	else
 		set emoji '🦑 '
 		set main_color blue
