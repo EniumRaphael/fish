@@ -18,6 +18,7 @@ function mc
 				sudo docker stop mc
 			case *
 				echo "Usage: mc [init | start | restart | console | logs | stop]"
+			end
 	end
 end
 
