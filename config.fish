@@ -23,30 +23,29 @@ end
 
 function fish_prompt
     set -l path (string replace -r "^$HOME" "~" $PWD)
+    set -l user (whoami)
+    set -l host (cat /etc/hostname)
 
-	if test (whoami) = "root"
-		set emoji '⛔ '
-		set main_color D88C8C
-		set secondary_color red
-	else if test (cat /etc/hostname) = "enium"
-		set emoji '🌐 '
-		set main_color blue
-		set secondary_color brcyan
-		for tools in ~/.config/fish/functions/automations/*
-			source $tools
-		end
-	else
-		set emoji '🦑 '
-		set main_color blue
-		set secondary_color brcyan
-	end
+    if test "$user" = "root"
+        set emoji '⛔ '
+        set main_color D88C8C
+        set secondary_color red
+    else if test "$host" = "enium"
+        set emoji '🐧 '
+        set main_color 8CD8D8
+        set secondary_color cyan
+    else
+        set emoji '🦑 '
+        set main_color blue
+        set secondary_color brcyan
+    end
 
-	set_color $main_color
+    set_color $main_color
     echo -n $emoji
 
-	set_color $secondary_color
+    set_color $secondary_color
     echo -n '('$path')'
-	__fish_git_prompt
+    __fish_git_prompt
     set_color $main_color
     echo -n ': '
     set_color normal
