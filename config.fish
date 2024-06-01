@@ -28,7 +28,7 @@ function fish_prompt
 		set emoji '⛔ '
 		set main_color D88C8C
 		set secondary_color red
-	else if test (hostname) = "enium"
+	else if test (cat /etc/hostname) = "enium"
 		set emoji '🌐 '
 		set main_color blue
 		set secondary_color brcyan
